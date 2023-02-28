@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html> 
   <head>
     <meta charset="utf-8">
     <title>My To-Do List!</title>
@@ -10,21 +10,10 @@
       crossorigin="anonymous">
   </head>
   <body>
-    @using ToDoList.Models;
-
-    <h1>To Do List</h1>
-
-    @if (Model.Count == 0)
-    {
-      <p>There are no items in the list.</p>
-    }
-    <ul>
-      @foreach (Item item in Model)
-    {
-      <li>@item.Description</li>
-    }
-    </ul>
-
-    <a href="/items/new">Add a new item.</a>
+    <form action="/items" method="post">
+      <label for="description">Add a new item</label>
+      <input id="description" name="description" type="text">
+      <button type="submit">Submit</button>
+    </form>
   </body>
 </html>
