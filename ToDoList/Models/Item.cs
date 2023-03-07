@@ -138,7 +138,6 @@ public static Item Find(int id)
       {
         conn.Dispose();
       }
-
     }
   }
 }
