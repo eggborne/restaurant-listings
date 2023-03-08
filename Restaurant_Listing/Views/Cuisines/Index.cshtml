@@ -4,7 +4,7 @@
 
 @using Restaurant_Listing.Models;
 
-<h1>Categories</h1>
+<h1>Cuisine Types</h1>
 
 @if (@Model.Count == 0)
 {
@@ -18,5 +18,9 @@
   }
 </ul>
 
-<p>@Html.ActionLink("Add new cuisine", "Create")</p>
-<p>@Html.ActionLink("Home", "Index", "Home")</p>
+<a href='@Url.Action("Create")'>
+  <button>Add New Cuisine</button>
+</a>
+<a href='@Url.Action("Index", "Home")'>
+  <button>Home</button>
+</a>

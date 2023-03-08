@@ -3,5 +3,10 @@
 }
 <h1>Welcome to the Restaurant Listings!</h1>
 
-<h3>@Html.ActionLink("See all cuisine types", "Index", "Cuisines")</h3>
-<h3>@Html.ActionLink("See all restaurants", "Index", "Restaurants")</h3>
+
+<a href='@Url.Action("Index", "Cuisines")'>
+  <button>See Cuisine Types</button>
+</a>
+<a href='@Url.Action("Index", "Restaurants")'>
+  <button>See Restaurants</button>
+</a>

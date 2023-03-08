@@ -8,6 +8,7 @@ namespace Restaurant_Listing.Controllers
     [HttpGet("/")]
     public ActionResult Index()
     {
+      ViewBag.PageTitle = "Restaurant Listings!";
       return View();
     }
   

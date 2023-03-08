@@ -18,11 +18,13 @@ namespace Restaurant_Listing.Controllers
     public ActionResult Index()
     {
       List<Cuisine> model = _db.Cuisines.ToList();
+      ViewBag.PageTitle = "All Cuisines";
       return View(model);
     }
 
     public ActionResult Create()
     {
+      ViewBag.PageTitle = "Add A New Cuisine";
       return View();
     }
 
@@ -39,12 +41,14 @@ namespace Restaurant_Listing.Controllers
       Cuisine thisCuisine = _db.Cuisines
                             .Include(cuisine => cuisine.Restaurants)
                             .FirstOrDefault(cuisine => cuisine.CuisineId == id);
+      ViewBag.PageTitle = $"Details for {thisCuisine.Name}";
       return View(thisCuisine);
     }
 
     public ActionResult Edit(int id)
     {
       Cuisine thisCuisine = _db.Cuisines.FirstOrDefault(cuisine => cuisine.CuisineId == id);
+      ViewBag.PageTitle = $"Editing {thisCuisine.Name}";
       return View(thisCuisine);
     }
 

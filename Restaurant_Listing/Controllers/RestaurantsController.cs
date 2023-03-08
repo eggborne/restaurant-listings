@@ -21,12 +21,14 @@ namespace Restaurant_Listing.Controllers
       List<Restaurant> model = _db.Restaurants
                             .Include(restaurant => restaurant.Cuisine)
                             .ToList();
+      ViewBag.PageTitle = "All Restaurants";
       return View(model);
     }
 
     public ActionResult Create()
     {
       ViewBag.CuisineId = new SelectList(_db.Cuisines, "CuisineId", "Name");
+      ViewBag.PageTitle = "Add A New Restaurant";
       return View();
     }
 
@@ -47,6 +49,7 @@ namespace Restaurant_Listing.Controllers
       Restaurant thisRestaurant = _db.Restaurants
                           .Include(restaurant => restaurant.Cuisine)
                           .FirstOrDefault(restaurant => restaurant.RestaurantId == id);
+      ViewBag.PageTitle = $"Details for {thisRestaurant.Name}";
       return View(thisRestaurant);
     }
 
@@ -54,6 +57,7 @@ namespace Restaurant_Listing.Controllers
     {
       Restaurant thisRestaurant = _db.Restaurants.FirstOrDefault(restaurant => restaurant.RestaurantId == id);
       ViewBag.CuisineId = new SelectList(_db.Cuisines, "CuisineId", "Name");
+      ViewBag.PageTitle = $"Editing {thisRestaurant.Name}";
       return View(thisRestaurant);
     }
 
@@ -68,6 +72,7 @@ namespace Restaurant_Listing.Controllers
     public ActionResult Delete(int id)
     {
       Restaurant thisRestaurant = _db.Restaurants.FirstOrDefault(restaurant => restaurant.RestaurantId == id);
+      ViewBag.PageTitle = $"Editing {thisRestaurant.Name}";
       return View(thisRestaurant);
     }
 

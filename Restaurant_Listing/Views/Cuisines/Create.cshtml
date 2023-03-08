@@ -7,8 +7,11 @@
 <h4>Add a new cuisine</h4>
 @using (Html.BeginForm())
 {
-  @Html.LabelFor(model => model.Name)
-  @Html.TextBoxFor(model => model.Name)
-  <input type="submit" value="Add new cuisine" />
+  <div>@Html.LabelFor(model => model.Name)</div>
+  <div>@Html.TextBoxFor(model => model.Name)</div>
+  <button class="green" type="submit">Add Cuisine Type</button>
 }
-<p>@Html.ActionLink("Show all cuisines", "Index")</p>
+
+<a href='@Url.Action("Index")'>
+  <button>Exit Without Saving</button>
+</a>

@@ -7,7 +7,6 @@
 
 <h2>Cuisine Details</h2>
 <hr />
-<h3>@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)<h3>
 
 @if (@Model.Restaurants.Count == 0)
 {
@@ -15,15 +14,24 @@
 } 
 else
 {
-  <h3>Restaurants:</h3>
+  <h3>@Html.DisplayFor(model => model.Name) Restaurants:</h3>
   <ul>
     @foreach (Restaurant restaurant in Model.Restaurants)
     {
-      <li>@Html.ActionLink($"{restaurant.Description}", "Details", "Restaurants", new { id = restaurant.RestaurantId })</li>
+      <h3>Name: @restaurant.Name</h3>
+      <h3>Description: @Html.DisplayFor(model => restaurant.Description)</h3>
+
+      @* <li>@Html.ActionLink($"{restaurant.Description}", "Details", "Restaurants", new { id = restaurant.RestaurantId })</li> *@
     }
   </ul>
 }
 
-<p>@Html.ActionLink("Edit Cuisine", "Edit", new { id = Model.CuisineId })</p>
-<p>@Html.ActionLink("Delete Cuisine", "Delete", new { id = Model.CuisineId })</p>
-<p>@Html.ActionLink("Back to list", "Index")</p>
+<a href='@Url.Action("Edit", new { id = Model.CuisineId })'>
+  <button>Edit</button>
+</a>
+<a href='@Url.Action("Delete", new { id = Model.CuisineId })'>
+  <button>Delete</button>
+</a>
+<a href='@Url.Action("Index")'>
+  <button>Back to list</button>
+</a>

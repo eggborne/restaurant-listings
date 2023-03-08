@@ -9,5 +9,9 @@
 <h3>Name: @Html.DisplayFor(model => model.Name)</h3>
 <h3>Description: @Html.DisplayFor(model => model.Description)</h3>
 
-<p>@Html.ActionLink("Edit Restaurant", "Edit")</p>
-<p>@Html.ActionLink("Back to list", "Index")</p>
+<a href='@Url.Action("Edit")'>
+  <button class="yellow">Edit Restaurant</button>
+</a>
+<a href='@Url.Action("Index")'>
+  <button>Back to list</button>
+</a>

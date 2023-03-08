@@ -1,7 +1,82 @@
 body {
-  margin: 1rem;
-  background: #222;
+  margin: 2rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background: #171717;
   color: #ddd;
+}
+
+a {
+  text-decoration: none;
+}
+
+p {
+  font-size: 1.2rem;
+}
+
+button {
+  font-size: inherit;
+  width: 12rem;
+  padding: 1rem 0;
+  margin: 1rem 0;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 300ms ease;
+}
+
+button:hover {
+  background-color: orange;
+}
+
+form, ul{
+  display: flex;
+  flex-direction: column;
+  width: min-content;
+  padding: 1rem;
+  background-color: #00000033;
+}
+
+ul {
+  list-style-type: none;
+  background-color: #ffffff33;
+  width: 20rem;
+  margin: 2rem 0;
+}
+
+li {
+  padding: 1rem;
+}
+
+.restaurant-list-item .description {
+  font-style: italic;
+  font-size: 1rem;
+
+}
+
+li:nth-child(odd) {
+  background-color: #00000022;
+}
+
+li:nth-child(even) {
+  background-color: #00000011;
+}
+
+input, select {
+  padding: 0.5rem 1rem;
+}
+
+button.green {
+  background-color: rgb(187, 255, 187);
+  margin: 2rem 0;
+}
+
+button.yellow {
+  background-color: rgb(244, 255, 187);
+  margin-top: 0;
+}
+
+button.red {
+  background-color: rgb(255, 187, 187);
+  margin-top: 0;
 }
 
 footer {

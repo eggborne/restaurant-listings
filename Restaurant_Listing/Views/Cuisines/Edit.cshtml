@@ -15,6 +15,9 @@
   @Html.LabelFor(model => model.Name)
   @Html.EditorFor(model => model.Name)
 
-  <input type="submit" value="Save" />
+  <button class="green" type="submit">Save</button>
 }
-<p>@Html.ActionLink("Back to list", "Index")</p>
+
+<a href='@Url.Action("Index")'>
+  <button>Back to list</button>
+</a>
