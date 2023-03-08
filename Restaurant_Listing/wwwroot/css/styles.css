@@ -1,4 +1,10 @@
-div#footer {
+body {
+  margin: 1rem;
+  background: #222;
+  color: #ddd;
+}
+
+footer {
   position:fixed;
   bottom:0px;
   left:0px;

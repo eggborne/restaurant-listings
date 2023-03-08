@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 
-namespace ToDoList.Controllers
+namespace Restaurant_Listing.Controllers
 {
   public class HomeController : Controller
   {
@@ -10,12 +10,6 @@ namespace ToDoList.Controllers
     {
       return View();
     }
-
-    [Route("/favorite_photos")]
-    public ActionResult FavoritePhotos()
-    {
-      return View();
-    }
-    
+  
   }
 }
